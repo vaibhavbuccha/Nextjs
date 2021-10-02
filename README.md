@@ -41,3 +41,22 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 4. catch all routes - Add three dots inside a square brackets to create a catch all route. Helpful when you want different URLs for the same page layout or even when you are working with pages where some of the route parameters are optional.
 5. Link Component to navigate on click of an element.
 6. useRouter hook's router.push method to navigate programmatically.
+
+# getStaticProps
+
+---
+
+1.
+
+---
+
+    1. getStaticProps runs only server-side.
+    2. which implies the function never runs client-side.
+    3. As the matter of fact the code we write inside getStaticProps won't even be included in the JS Bundle that is send to the browser.
+
+2.
+
+---
+
+    1. We can write server-side code directly in getStaticProps.
+    2. Accessing the file system using the fs module and query a database can be done into getStaticProps.
