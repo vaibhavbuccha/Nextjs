@@ -94,3 +94,15 @@ HTML, Javascript and a JSON file are generated
 If we navigate directly to the page route the html file is served
 
 If we navigate to the page from a different route, the page is created client side using the javascript and json prefetched from the server.
+
+## getStaticPaths
+
+---
+
+getStaticPath Helps in generating dynamic paths with static parameters in pre-rendering.
+
+## getStaticProps
+
+---
+
+getStaticProps Helps in server side pre-rendering.
