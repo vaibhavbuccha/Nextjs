@@ -60,3 +60,37 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
     1. We can write server-side code directly in getStaticProps.
     2. Accessing the file system using the fs module and query a database can be done into getStaticProps.
+
+### Link pre-fetching
+
+---
+
+Any <Link /> component in the viewport (initially or though scroll) will be prefetched by default (including the corresponding data) for pages using static generation.
+
+### Link pre-fetching contd.
+
+---
+
+When a page getStaticProps is pre-rendered at build time, in addition to the page HTML File, Next.js generates a JSON file holding the result of running getStaticProps.
+
+The JSON file will be used in client-side routing through next/link, or next/router.
+
+When you navigate to a page thats pre-rendering using getStaticProps, Next.js fetches the JSON file (Pre-computing at build time) and uses it as the props to create the page component client-side.
+
+Client side page transitions will not call getStaticProps as only the exported JSON in used.
+
+## Static Generation Summery
+
+---
+
+Static Generation is a method of pre-rendering where the HTML Pages are generated at build time.
+
+with and without external data.
+
+export getstaticProps functions for external data
+
+HTML, Javascript and a JSON file are generated
+
+If we navigate directly to the page route the html file is served
+
+If we navigate to the page from a different route, the page is created client side using the javascript and json prefetched from the server.
